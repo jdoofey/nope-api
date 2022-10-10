@@ -247,3 +247,71 @@ user's information.
       }
     }
     ```
+## FEATURE 0: USER AUTHORIZATION
+
+## Get all Businesses
+
+Returns all the businesses
+
+Return businesses (with optional filter by query parameters).
+
+* Require Authentication: false
+* Request
+  * Method: GET
+  * URL: /api/songs
+  * Query Parameters
+    * page: integer, minimum: 1, maximum: 10, default: 1
+    * size: integer, minimum: 1, maximum: 20, default: 20
+    * business_name: string, optional
+    * category: string, optional
+  * Body: none
+
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "businesses":[
+        {
+          "id": 1,
+          "business_name": "Some Place",
+          "email":"business@app.io",
+          "phone":"123-456-8910",
+          "street_address": "123 Street Ave",
+          "city":"Springfield",
+          "zipcode":98765,
+          "state":"CA",
+          "country":"United States of America",
+          "about":"Some descriptive sentence",
+          "longitude":130,
+          "latitude":90,
+          "price_range":,
+          "owner_id": 1,
+        }
+      ],
+      "page": 2,
+      "size": 25
+    }
+    ```
+
+* Error Response: Query parameter validation errors
+  * Status Code: 400
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Validation Error",
+      "statusCode": 400,
+      "errors": {
+        "page": "Page must be greater than or equal to 0",
+        "size": "Size must be greater than or equal to 0",
+        "createdAt": "CreatedAt is invalid"
+      }
+    }
+    ```
+
