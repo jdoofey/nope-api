@@ -290,28 +290,13 @@ Return businesses (with optional filter by query parameters).
           "latitude":90,
           "price_range":,
           "owner_id": 1,
+          "created_at":"some date string",
+          "updated_at":"some other date string",
         }
       ],
-      "page": 2,
+      "page": 1,
       "size": 25
     }
     ```
 
-* Error Response: Query parameter validation errors
-  * Status Code: 400
-  * Headers:
-    * Content-Type: application/json
-  * Body:
-
-    ```json
-    {
-      "message": "Validation Error",
-      "statusCode": 400,
-      "errors": {
-        "page": "Page must be greater than or equal to 0",
-        "size": "Size must be greater than or equal to 0",
-        "createdAt": "CreatedAt is invalid"
-      }
-    }
-    ```
 
