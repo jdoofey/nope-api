@@ -258,7 +258,7 @@ Return businesses (with optional filter by query parameters).
 * Require Authentication: false
 * Request
   * Method: GET
-  * URL: /api/songs
+  * URL: /api/businesses
   * Query Parameters
     * page: integer, minimum: 1, maximum: 10, default: 1
     * size: integer, minimum: 1, maximum: 20, default: 20
@@ -298,5 +298,18 @@ Return businesses (with optional filter by query parameters).
       "size": 15
     }
     ```
+    
+## Businesses owned by Current User
+
+Returns all Businesses owned by the current user.
+
+* Require Authentication: True
+* Request
+  * Method: GET
+  * URL: /api/businesses/current
+  * Body: none
+ * Successful Response
+  
+
 
 
