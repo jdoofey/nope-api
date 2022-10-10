@@ -263,7 +263,7 @@ Return businesses (with optional filter by query parameters).
     * page: integer, minimum: 1, maximum: 10, default: 1
     * size: integer, minimum: 1, maximum: 20, default: 20
     * business_name: string, optional
-    * category: string, optional
+    * business_tags: string, optional
   * Body: none
 
 * Successful Response
