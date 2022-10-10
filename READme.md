@@ -295,7 +295,7 @@ Return businesses (with optional filter by query parameters).
         }
       ],
       "page": 1,
-      "size": 25
+      "size": 15
     }
     ```
 
