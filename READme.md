@@ -589,10 +589,31 @@ Returns all Businesses owned by the current user.
       * URL:/api/business/:business_id
       * Headers:
          * Content-Type: application/json
-      * Body:
-```json
-{
-}
-```
+      * Body: None
+      
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
 
+    ```json
+    {
+      "message": "Successfully deleted",
+      "statusCode": 200
+    }
+    ```
+
+* Error response: Couldn't find a Business with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Business couldn't be found",
+      "statusCode": 404
+    }
+    ```
 
