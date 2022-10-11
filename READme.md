@@ -26,7 +26,6 @@
   * [Create Tags for a business by business ID](#create-tags-for-a-business-by-business-id)
   * [Update Tags by Business ID](#update-tags-by-business-id)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
 ## FEATURE 0: USER AUTHORIZATION
