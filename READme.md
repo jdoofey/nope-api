@@ -1,20 +1,10 @@
 ## API Documentation
 
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#feature-0:-user-authorization">Feature 0: Authorization</a>
-    </li>
-    <li>
-      <a href="#feature-1:-businesses">Feature 1: Businesses</a>
-    </li>
-    <li>
-      <a href="#feature-2:-reviews">Feature 2: Reviews</a>
-    </li>
-    <li><a href="feature-3:-tags">Feature 3: Tags</a></li>
-  </ol>
-</details>
+##### Table of Contents  
+[Headers](#headers)  
+[Emphasis](#emphasis)  
+...snip...    
+<a name="headers"/>
 
 ## FEATURE 0: USER AUTHORIZATION
 
