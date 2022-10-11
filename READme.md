@@ -23,7 +23,7 @@
   * [Add an Image to a Review based on the Review's id](#add-an-image-to-a-review-based-on-the-review-s-id)
   * [Edit a Review](#edit-a-review)
   * [Delete a Review](#delete-a-review)
-- [Feature 3: Tags](#feature-3--tags)
+- [FEATURE 3: TAGS](#feature-3--tags)
   * [Get all Tags](#get-all-tags)
   * [Get Tags by Business ID](#get-tags-by-business-id)
   * [Create Tags for a business by business ID](#create-tags-for-a-business-by-business-id)
