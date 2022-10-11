@@ -247,7 +247,7 @@ user's information.
       }
     }
     ```
-## FEATURE 0: USER AUTHORIZATION
+## FEATURE 1: BUSINESSES
 
 ## Get all Businesses
 
@@ -616,4 +616,365 @@ Returns all Businesses owned by the current user.
       "statusCode": 404
     }
     ```
+## FEATURE 2: REVIEWS
 
+### Get all Reviews of the Current User
+
+Returns all the reviews written by the current user.
+
+* Require Authentication: true
+* Request
+  * Method: GET
+  * URL: /api/reviews/current
+  * Body: none
+
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "reviews": [
+        {
+          "id": 1,
+          "user_id": 1,
+          "business_id": 1,
+          "review": "This was an awesome spot!",
+          "rating": 5,
+          "created_at": "2021-11-19 20:39:36",
+          "updated_at": "2021-11-19 20:39:36" ,
+          "user": {
+            "id": 1,
+            "first_name": "John",
+            "last_name": "Smith"
+          },
+          "businesses": {
+            "id": 1,
+            "owner_id": 1,
+            "business_name": "Some Place",
+            "email": "business@app.io",
+            "phone": "123-456-8910",
+            "street_address": "123 Street Ave",
+            "city": "Springfield",
+            "zipcode": 98765,
+            "state": "CA",
+            "country": "United States of America",
+            "about": "Some descriptive sentence",
+            "longitude": 130,
+            "latitude": 90,
+            "price_range": 1,
+            "created_at":"some date string",
+            "updated_at":"some other date string"
+          },
+          "review_images": [
+            {
+              "id": 1,
+              "url": "image url"
+            }
+          ]
+        }
+      ]
+    }
+    ```
+
+### Get all Reviews by a Businesses's id
+
+Returns all the reviews that belong to a spot specified by id.
+
+* Require Authentication: false
+* Request
+  * Method: GET
+  * URL: /api/businesses/:business_id/reviews
+  * Body: none
+
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "reviews": [
+        {
+          "id": 1,
+          "user_id": 1,
+          "business_id": 1,
+          "review": "This was an awesome spot!",
+          "rating": 5,
+          "created_at": "2021-11-19 20:39:36",
+          "updated_at": "2021-11-19 20:39:36" ,
+          "user": {
+            "id": 1,
+            "first_name": "John",
+            "last_name": "Smith"
+          },
+          "review_images": [
+            {
+              "id": 1,
+              "url": "image url"
+            }
+          ],
+        }
+      ]
+    }
+    ```
+
+* Error response: Couldn't find a Business with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Business couldn't be found",
+      "statusCode": 404
+    }
+    ```
+
+### Create a Review for a Business based on the Business's id
+
+Create and return a new review for a spot specified by id.
+
+* Require Authentication: true
+* Request
+  * Method: POST
+  * URL: /api/business/:business_id/reviews
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "review": "This was awful!",
+      "nopes": 5,
+    }
+    ```
+
+* Successful Response
+  * Status Code: 201
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "id": 1,
+      "user_id": 1,
+      "business_id": 1,
+      "review": "This was awful!",
+      "nopes": 5,
+      "created_at": "2021-11-19 20:39:36",
+      "updated_at": "2021-11-19 20:39:36"
+    }
+    ```
+
+* Error Response: Body validation errors
+  * Status Code: 400
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Validation error",
+      "statusCode": 400,
+      "errors": {
+        "review": "Review text is required",
+        "nopes": "Nopes must be an integer from 1 to 5",
+      }
+    }
+    ```
+
+* Error response: Couldn't find a Business with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Business couldn't be found",
+      "statusCode": 404
+    }
+    ```
+
+* Error response: Review from the current user already exists for the Business
+  * Status Code: 403
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "User already has a review for this business",
+      "statusCode": 403
+    }
+    ```
+
+### Add an Image to a Review based on the Review's id
+
+Create and return a new image for a review specified by id.
+
+* Require Authentication: true
+* Require proper authorization: Review must belong to the current user
+* Request
+  * Method: POST
+  * URL: /api/reviews/:review_id/images
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "url": "image url"
+    }
+    ```
+
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "id": 1,
+      "url": "image url"
+    }
+    ```
+
+* Error response: Couldn't find a Review with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Review couldn't be found",
+      "statusCode": 404
+    }
+    ```
+
+* Error response: Cannot add any more images because there is a maximum of 10
+  images per resource
+  * Status Code: 403
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Maximum number of images for this resource was reached",
+      "statusCode": 403
+    }
+    ```
+
+### Edit a Review
+
+Update and return an existing review.
+
+* Require Authentication: true
+* Require proper authorization: Review must belong to the current user
+* Request
+  * Method: PUT
+  * URL: /api/reviews/:review_id
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "review": "This was awful!",
+      "nopes": 5,
+    }
+    ```
+
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "id": 1,
+      "user_id": 1,
+      "business_id": 1,
+      "review": "This was awful!",
+      "nopes": 5,
+      "createdAt": "2021-11-19 20:39:36",
+      "updatedAt": "2021-11-20 10:06:40"
+    }
+    ```
+
+* Error Response: Body validation errors
+  * Status Code: 400
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Validation error",
+      "statusCode": 400,
+      "errors": {
+        "review": "Review text is required",
+        "nopes": "Nopes must be an integer from 1 to 5",
+      }
+    }
+    ```
+
+* Error response: Couldn't find a Review with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Review couldn't be found",
+      "statusCode": 404
+    }
+    ```
+
+### Delete a Review
+
+Delete an existing review.
+
+* Require Authentication: true
+* Require proper authorization: Review must belong to the current user
+* Request
+  * Method: DELETE
+  * URL: /api/reviews/:review_id
+  * Body: none
+
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Successfully deleted",
+      "statusCode": 200
+    }
+    ```
+
+* Error response: Couldn't find a Review with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Review couldn't be found",
+      "statusCode": 404
+    }
+    ```
