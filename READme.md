@@ -503,7 +503,7 @@ Returns all Businesses owned by the current user.
    * Require Authentication: true
    * Request
       * Method:PUT
-      * URL:/api/business/:business_id
+      * URL:/api/businesses/:business_id
       * Headers:
          * Content-Type: application/json
       * Body:
@@ -513,7 +513,7 @@ Returns all Businesses owned by the current user.
       "email":"business@app.io",
       "phone":"123-456-8910",
       "street_address": "123 Street Ave",
-      "city":"Springfield"        
+      "city":"Springfield",        
       "zipcode":98765,
       "state":"CA",
       "country":"United States of America",
@@ -592,7 +592,7 @@ Returns all Businesses owned by the current user.
    * Require Authentication: true
    * Request
       * Method:DELETE
-      * URL:/api/business/:business_id
+      * URL:/api/businesses/:business_id
       * Headers:
          * Content-Type: application/json
       * Body: None
@@ -749,7 +749,7 @@ Create and return a new review for a spot specified by id.
 * Require Authentication: true
 * Request
   * Method: POST
-  * URL: /api/business/:business_id/reviews
+  * URL: /api/businesses/:business_id/reviews
   * Headers:
     * Content-Type: application/json
   * Body:
