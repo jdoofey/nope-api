@@ -424,6 +424,70 @@ Returns all Businesses owned by the current user.
     * Body:
 ```json
 {
+      "business_name": "Some Place",
+      "email":"business@app.io",
+      "phone":"123-456-8910",
+      "street_address": "123 Street Ave",
+      "city":"Springfield"        
+      "zipcode":98765,
+      "state":"CA",
+      "country":"United States of America",
+      "about":"Some descriptive sentence",
+      "longitude":130,
+      "latitude":90,
+      "price_range":,
+}
+```
+* Successful Response
+  * Status Code: 201
+  * Headers: 
+    * Content-Type: application/json
+  * Body:
+```json
+{
+          "id": 1,
+          "business_name": "Some Place",
+          "email":"business@app.io",
+          "phone":"123-456-8910",
+          "street_address": "123 Street Ave",
+          "city":"Springfield",
+          "zipcode":98765,
+          "state":"CA",
+          "country":"United States of America",
+          "about":"Some descriptive sentence",
+          "longitude":130,
+          "latitude":90,
+          "price_range":,
+          "owner_id": 1,
+          "created_at":"some date string",
+          "updated_at":"some other date string",
+        }
+```
+* Error Response: Body validation error
+  * Status Code: 400
+  * Headers:
+    * Content-Type: application/json
+  * Body: 
+```json
+{
+   "message":"Validation Error",
+   "status_code": 400,
+   "errors":{
+      "street_address":"Address is required",
+      "street_address":"A business already exists with this address",
+      "city":"City is required",
+      "state":"State is required",
+      "country","Country is required",
+      "zipcode":"Zipcode is required",
+      "business_name":"Business name is required",
+      "business_name":"A business with this name already exists",
+      "business_name":"Business name must be less than 50 characters",
+      "about":"About is required",
+      "longitude":"Longitude is required",
+      "latitude":"latitude is required",
+      "price_range":"Price range is required"
+      
+   }
 }
 ```
    ## Edit Business
