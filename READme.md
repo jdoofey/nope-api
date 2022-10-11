@@ -65,32 +65,6 @@ Returns the information about the current user that is logged in.
       "user_avatar":"image.url"
     }
     ```
-### Get the Current User
-
-Returns the information about the current user that is logged in.
-
-* Require Authentication: true
-* Request
-  * Method: GET
-  * URL: /api/session
-  * Body: none
-
-* Successful Response
-  * Status Code: 200
-  * Headers:
-    * Content-Type: application/json
-  * Body:
-
-    ```json
-    {
-      "id": 1,
-      "first_name": "John",
-      "last_name": "Smith",
-      "email": "john.smith@gmail.com",
-      "username": "JohnSmith",
-      "user_avatar":"image.url"
-    }
-    ```
 ### Log In a User
 
 Logs in a current user with valid credentials and returns the current user's
