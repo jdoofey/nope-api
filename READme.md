@@ -313,7 +313,7 @@ Returns all Businesses owned by the current user.
   * Headers:
     * Content-Type: application/json
   * Body: 
-  ```
+  ```json
   {
       "businesses":[
         {
@@ -334,11 +334,27 @@ Returns all Businesses owned by the current user.
           "created_at":"some date string",
           "updated_at":"some other date string",
         }
-      ],
-      "page": 1,
-      "size": 15
+      ]
     }
   ```
+  
+  ## Get details of a Business from an Id
+  
+  Returns details of a business specified by its id
+  
+   * Require Authentication: false
+   * Request
+     * Method: GET
+     * URL: /api/businesses/:businessId
+   * Successful Response
+     * Status Code: 200
+     * Headers:
+       * Content-Type: application/json 
+     * Body:
+```json
+{
+}
+```
   
 
 
