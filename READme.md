@@ -1,4 +1,5 @@
 ## API Documentation
+
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -14,6 +15,7 @@
     <li><a href="feature-3:-tags">Feature 3: Tags</a></li>
   </ol>
 </details>
+
 ## FEATURE 0: USER AUTHORIZATION
 
 ### All endpoints that require authentication
