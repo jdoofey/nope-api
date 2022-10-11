@@ -163,6 +163,7 @@ information.
       }
     }
     ```
+    
 ### Sign Up a User
 
 Creates a new user, logs them in as the current user, and returns the current
@@ -253,6 +254,8 @@ user's information.
       }
     }
     ```
+    
+    
 ## FEATURE 1: BUSINESSES
 
 ## Get all Businesses
@@ -496,6 +499,7 @@ Returns all Businesses owned by the current user.
    }
 }
 ```
+
    ## Edit Business
    
    Edit and return an existing business
