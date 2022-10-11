@@ -622,7 +622,6 @@ Returns all Businesses owned by the current user.
       "statusCode": 404
     }
     ```
-[Back To Top](#api-documentation)
     
 ## FEATURE 2: REVIEWS
 
