@@ -1,4 +1,4 @@
-## API Documentation
+# API Documentation
 
 <details>
  <summary>Table of Contents</summary>
