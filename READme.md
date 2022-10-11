@@ -309,6 +309,36 @@ Returns all Businesses owned by the current user.
   * URL: /api/businesses/current
   * Body: none
  * Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body: 
+  ```
+  {
+      "businesses":[
+        {
+          "id": 1,
+          "business_name": "Some Place",
+          "email":"business@app.io",
+          "phone":"123-456-8910",
+          "street_address": "123 Street Ave",
+          "city":"Springfield",
+          "zipcode":98765,
+          "state":"CA",
+          "country":"United States of America",
+          "about":"Some descriptive sentence",
+          "longitude":130,
+          "latitude":90,
+          "price_range":,
+          "owner_id": 1,
+          "created_at":"some date string",
+          "updated_at":"some other date string",
+        }
+      ],
+      "page": 1,
+      "size": 15
+    }
+  ```
   
 
 
