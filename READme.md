@@ -345,7 +345,7 @@ Returns all Businesses owned by the current user.
    * Require Authentication: false
    * Request
      * Method: GET
-     * URL: /api/businesses/:businessId
+     * URL: /api/businesses/:business_id
    * Successful Response
      * Status Code: 200
      * Headers:
@@ -355,7 +355,35 @@ Returns all Businesses owned by the current user.
 {
 }
 ```
+  ## Create a Business
   
-
+  Create and return a business
+  
+  * Require Authentication: true
+  * Request
+    * Method:POST
+    * URL:/api/business
+    * Headers:
+      * Content-Type: application/json
+    * Body:
+```json
+{
+}
+```
+   ## Edit Business
+   
+   Edit and return an existing business
+   
+   * Require Authentication: true
+   * Request
+   * Method:PUT
+   * URL:/api/business/:business_id
+   * Headers:
+      * Content-Type: application/json
+    * Body:
+```json
+{
+}
+```
 
 
