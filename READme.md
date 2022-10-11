@@ -353,6 +353,50 @@ Returns all Businesses owned by the current user.
      * Body:
 ```json
 {
+          "id": 1,
+          "business_name": "Some Place",
+          "email":"business@app.io",
+          "phone":"123-456-8910",
+          "street_address": "123 Street Ave",
+          "city":"Springfield",
+          "zipcode":98765,
+          "state":"CA",
+          "country":"United States of America",
+          "about":"Some descriptive sentence",
+          "longitude":130,
+          "latitude":90,
+          "price_range":,
+          "owner_id": 1,
+          "created_at":"some date string",
+          "updated_at":"some other date string",
+          "Owner": {
+            "id":1,
+            "first_name":"Gare",
+            "last_name":"Bear",
+          },
+          "Images" : [
+            {
+               "id":3,
+               "business_id":1,
+               "url":"image.url"
+            }
+          ],
+          "Reviews": [
+            {
+              "id":1,
+              "business_id":1,
+              "user_id":1,
+              "rating":4,
+              "review":"Yummy! I'd take my wife here again!",
+              "created_at":"some date",
+              "updated_at":"some date"
+            }
+          ],
+          "Tags": {
+                "tag":"some tags as string here"
+          }
+          
+          
 }
 ```
   ## Create a Business
