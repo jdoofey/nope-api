@@ -393,12 +393,24 @@ Returns all Businesses owned by the current user.
             }
           ],
           "Tags": {
-                "tag":"some tags as string here"
+              "tag":"some tags as string here"
           }
           
           
 }
 ```
+* Error response: Couldn't find a Business with the specified id
+
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body: 
+  ```json
+  {
+    "message":"Sorry, this business doesn't exist",
+    "status_code":404
+  }
+  ```
   ## Create a Business
   
   Create and return a business
