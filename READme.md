@@ -2,6 +2,7 @@
 
 <details>
  <summary>Table of Contents</summary>
+ 
 - [FEATURE 0: USER AUTHORIZATION](#feature-0--user-authorization)
   * [All endpoints that require authentication](#all-endpoints-that-require-authentication)
   * [All endpoints that require proper authorization](#all-endpoints-that-require-proper-authorization)
@@ -27,6 +28,7 @@
   * [Get Tags by Business ID](#get-tags-by-business-id)
   * [Create Tags for a business by business ID](#create-tags-for-a-business-by-business-id)
   * [Update Tags by Business ID](#update-tags-by-business-id)
+ 
 </details>
 
 
