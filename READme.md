@@ -376,11 +376,26 @@ Returns all Businesses owned by the current user.
    
    * Require Authentication: true
    * Request
-   * Method:PUT
-   * URL:/api/business/:business_id
-   * Headers:
-      * Content-Type: application/json
-    * Body:
+      * Method:PUT
+      * URL:/api/business/:business_id
+      * Headers:
+         * Content-Type: application/json
+      * Body:
+```json
+{
+}
+```
+  ## Delete a Business
+  
+  Delete an existing Business
+  
+   * Require Authentication: true
+   * Request
+      * Method:DELETE
+      * URL:/api/business/:business_id
+      * Headers:
+         * Content-Type: application/json
+      * Body:
 ```json
 {
 }
