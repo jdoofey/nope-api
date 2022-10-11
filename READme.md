@@ -978,3 +978,137 @@ Delete an existing review.
       "statusCode": 404
     }
     ```
+## Feature 4: Tags
+
+### Get all Tags
+
+Returns all tag options.
+
+* Require Authentication: True
+  * Method: GET
+  * URL: /api/tags
+  * Body: none
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+```json
+{
+  tags: ["some tag", "some other tag", "etc"]
+}
+```
+
+### Get Tags by Business ID
+
+Returns all tags associated with a business by business ID
+
+* Require Authentication: False
+  * Method: GET
+  * URL: /api/businesses/:business_id/tags
+  * Body: None
+* Successful Response
+  * Status Code: 200
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+```json
+{
+  tags: ["some tag", "some other tag", "etc"]
+}
+```
+* Error response: Couldn't find a Business with the specified id
+  * Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Business couldn't be found",
+      "statusCode": 404
+    }
+    ```
+### Create Tags for a business by business ID
+
+Add tags to a business through its ID
+
+* Require Authentication: True
+* Request
+  * Method: POST
+  * URL: /api/businesses/:business_id/tags
+  * Body:
+```json
+{
+  tags: ["some tag", "some other tag", "etc"]
+}
+```
+* Successful Response
+  * Status Code: 201
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+```json
+{
+  tags: ["some tag", "some other tag", "etc"]
+}
+```
+* Error response: Couldn't find a Business associated with the specified ID
+* Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Business couldn't be found",
+      "statusCode": 404
+    }
+
+### Update Tags by Business ID
+Update tags associated with a business.
+* Require Authentication: True
+* Request:
+  * Method: POST
+  * URL: /api/businesses/:business_id/tags
+  * Body:
+```json
+{
+  tags: ["some tag", "some other tag", "etc"]
+}
+```
+* Successful Response
+  * Status Code: 201
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+```json
+{
+  tags: ["some tag", "some other tag", "etc"]
+}
+```
+* Error Response: Body Validation Error
+    * Status Code: 400
+    * Headers:
+       * Content-Type: application/json
+    * Body:
+```json
+{
+  "message":"Validation Error",
+   "status_code": 400,
+   "errors":{
+      "message":"Tag is required",
+   }
+}
+```
+* Error response: Couldn't find a Business associated with the specified ID
+* Status Code: 404
+  * Headers:
+    * Content-Type: application/json
+  * Body:
+
+    ```json
+    {
+      "message": "Business couldn't be found",
+      "statusCode": 404
+    }
