@@ -18,7 +18,7 @@
   * [Delete a Business](#delete-a-business)
 - [FEATURE 2: REVIEWS](#feature-2--reviews)
   * [Get all Reviews of the Current User](#get-all-reviews-of-the-current-user)
-  * [Get all Reviews by a Businesses's id](#get-all-reviews-by-a-businesses-s-id)
+  * [Get all Reviews by a Business's id](#get-all-reviews-by-a-businesses-s-id)
   * [Create a Review for a Business based on the Business's id](#create-a-review-for-a-business-based-on-the-business-s-id)
   * [Add an Image to a Review based on the Review's id](#add-an-image-to-a-review-based-on-the-review-s-id)
   * [Edit a Review](#edit-a-review)
