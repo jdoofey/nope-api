@@ -1,10 +1,33 @@
 ## API Documentation
 
-##### Table of Contents  
-[Headers](#headers)  
-[Emphasis](#emphasis)  
-...snip...    
-<a name="headers"/>
+- [FEATURE 0: USER AUTHORIZATION](#feature-0--user-authorization)
+  * [All endpoints that require authentication](#all-endpoints-that-require-authentication)
+  * [All endpoints that require proper authorization](#all-endpoints-that-require-proper-authorization)
+  * [Get the Current User](#get-the-current-user)
+  * [Log In a User](#log-in-a-user)
+  * [Sign Up a User](#sign-up-a-user)
+- [FEATURE 1: BUSINESSES](#feature-1--businesses)
+- [Get all Businesses](#get-all-businesses)
+- [Businesses owned by Current User](#businesses-owned-by-current-user)
+- [Get details of a Business from an Id](#get-details-of-a-business-from-an-id)
+- [Create a Business](#create-a-business)
+- [Edit Business](#edit-business)
+- [Delete a Business](#delete-a-business)
+- [FEATURE 2: REVIEWS](#feature-2--reviews)
+  * [Get all Reviews of the Current User](#get-all-reviews-of-the-current-user)
+  * [Get all Reviews by a Businesses's id](#get-all-reviews-by-a-businesses-s-id)
+  * [Create a Review for a Business based on the Business's id](#create-a-review-for-a-business-based-on-the-business-s-id)
+  * [Add an Image to a Review based on the Review's id](#add-an-image-to-a-review-based-on-the-review-s-id)
+  * [Edit a Review](#edit-a-review)
+  * [Delete a Review](#delete-a-review)
+- [Feature 3: Tags](#feature-3--tags)
+  * [Get all Tags](#get-all-tags)
+  * [Get Tags by Business ID](#get-tags-by-business-id)
+  * [Create Tags for a business by business ID](#create-tags-for-a-business-by-business-id)
+  * [Update Tags by Business ID](#update-tags-by-business-id)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## FEATURE 0: USER AUTHORIZATION
 
