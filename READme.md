@@ -978,7 +978,7 @@ Delete an existing review.
       "statusCode": 404
     }
     ```
-## Feature 4: Tags
+## Feature 3: Tags
 
 ### Get all Tags
 
@@ -994,9 +994,9 @@ Returns all tag options.
     * Content-Type: application/json
   * Body:
 ```json
-{
-  tags: ["some tag", "some other tag", "etc"]
-}
+  {
+      tags: ["some tag", "some other tag", "etc"]
+  }
 ```
 
 ### Get Tags by Business ID
@@ -1013,9 +1013,9 @@ Returns all tags associated with a business by business ID
     * Content-Type: application/json
   * Body:
 ```json
-{
-  tags: ["some tag", "some other tag", "etc"]
-}
+    {
+      tags: ["some tag", "some other tag", "etc"]
+    }
 ```
 * Error response: Couldn't find a Business with the specified id
   * Status Code: 404
@@ -1023,12 +1023,12 @@ Returns all tags associated with a business by business ID
     * Content-Type: application/json
   * Body:
 
-    ```json
+```json
     {
       "message": "Business couldn't be found",
       "statusCode": 404
     }
-    ```
+```
 ### Create Tags for a business by business ID
 
 Add tags to a business through its ID
@@ -1039,9 +1039,9 @@ Add tags to a business through its ID
   * URL: /api/businesses/:business_id/tags
   * Body:
 ```json
-{
-  tags: ["some tag", "some other tag", "etc"]
-}
+  {
+     tags: ["some tag", "some other tag", "etc"]
+  }
 ```
 * Successful Response
   * Status Code: 201
@@ -1049,9 +1049,9 @@ Add tags to a business through its ID
     * Content-Type: application/json
   * Body:
 ```json
-{
-  tags: ["some tag", "some other tag", "etc"]
-}
+   {
+      tags: ["some tag", "some other tag", "etc"]
+   }
 ```
 * Error response: Couldn't find a Business associated with the specified ID
 * Status Code: 404
@@ -1059,12 +1059,12 @@ Add tags to a business through its ID
     * Content-Type: application/json
   * Body:
 
-    ```json
+```json
     {
       "message": "Business couldn't be found",
       "statusCode": 404
     }
-
+```
 ### Update Tags by Business ID
 Update tags associated with a business.
 * Require Authentication: True
@@ -1073,9 +1073,9 @@ Update tags associated with a business.
   * URL: /api/businesses/:business_id/tags
   * Body:
 ```json
-{
-  tags: ["some tag", "some other tag", "etc"]
-}
+  {
+      tags: ["some tag", "some other tag", "etc"]
+  }
 ```
 * Successful Response
   * Status Code: 201
@@ -1083,9 +1083,9 @@ Update tags associated with a business.
     * Content-Type: application/json
   * Body:
 ```json
-{
-  tags: ["some tag", "some other tag", "etc"]
-}
+   {
+     tags: ["some tag", "some other tag", "etc"]
+   }
 ```
 * Error Response: Body Validation Error
     * Status Code: 400
@@ -1093,13 +1093,13 @@ Update tags associated with a business.
        * Content-Type: application/json
     * Body:
 ```json
-{
-  "message":"Validation Error",
-   "status_code": 400,
-   "errors":{
-      "message":"Tag is required",
-   }
-}
+   {
+      "message":"Validation Error",
+      "status_code": 400,
+      "errors":{
+         "message":"Tag is required",
+      }
+    }
 ```
 * Error response: Couldn't find a Business associated with the specified ID
 * Status Code: 404
@@ -1107,8 +1107,9 @@ Update tags associated with a business.
     * Content-Type: application/json
   * Body:
 
-    ```json
+```json
     {
       "message": "Business couldn't be found",
       "statusCode": 404
     }
+```
